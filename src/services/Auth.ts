@@ -17,6 +17,5 @@ export async function SignInRequest(data: SignInRequestData){
             name: 'Rafael Souza',
             email: 'faelsos98@gmail.com',
         }
-    }
-        
+    };      
 };

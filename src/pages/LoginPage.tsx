@@ -1,22 +1,21 @@
-import React, { useCallback, useState } from 'react';
+import React, {  useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext, SignInData } from '../contexts/AuthContext';
 
-type PropsForm = {
-  email:string;
-  password:string;
-}
 
 const LoginPage: React.FC = () => {
   
-const {register, handleSubmit} = useForm<PropsForm>();
+const {register, handleSubmit} = useForm<SignInData>();
+const { signIn } = useContext(AuthContext);
 
-function handleSingIn(data: PropsForm){
-console.log(data)
-}
+async function handleSignIn(data: SignInData){
+  await signIn?.(data);
+ 
+};
 
   return (
     <form
-    onSubmit={handleSubmit(handleSingIn)} 
+    onSubmit={handleSubmit(handleSignIn)} 
     className="items-center justify-center flex flex-col m-auto rounded-lg space-y-9 mt-64 bg-slate-100 w-96 h-96">
         <label>
           <span className='h-28'>

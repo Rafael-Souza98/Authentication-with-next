@@ -1,12 +1,10 @@
-import type { NextPage } from 'next'
-import LoginPage from './LoginPage'
 
+import LoginPage from './LoginPage';
 
-
-const Home: NextPage = () => {
+const Home: React.FC = () => {
   return (
     <LoginPage/>
-  )
-}
+  );
+};
 
 export default Home
